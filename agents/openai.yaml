@@ -1,0 +1,4 @@
+interface:
+  display_name: "企业风险分析报告"
+  short_description: "基于 HandaaS 企业风险分析洞察 MCP，生成风险评分 / 诉讼风险画像 / 严重违法 / 动产抵押 / 开庭公告 / 法院公告 / 知识产权出质 / 行政处罚 / 经营异常 / 限制高消费的专业 HTML / Markdown / JSON 报告。"
+  default_prompt: "使用 $enterprise-risk-report 生成「企业名称」的企业风险分析报告：自动补全企业全称，调用企业风险 MCP 工具，产出 HTML + Markdown + JSON 三件套。"
