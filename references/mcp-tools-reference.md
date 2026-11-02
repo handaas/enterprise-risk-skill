@@ -7,7 +7,7 @@
 ## 通用约定
 
 - `keywordType` 枚举：`name`（企业名称）/ `nameId`（企业 id）/ `regNumber`（注册号）/ `socialCreditCode`（统一社会信用代码）。
-- 分页：`pageIndex` 从 1 开始；`pageSize` 单页最多 50。
+- 分页：`pageIndex` 从 1 开始；`pageSize` 单页最多 50。仅开庭公告、法院公告、限制高消费三个明细接口支持分页，本 skill 按显式页数预算采集（CLI `--max-pages`，默认 1 页；首屏同时作报告数据与 total 发现，不重复请求）；评分、严重违法、动产抵押、诉讼画像、知识产权出质、行政处罚、经营异常接口不支持 pageIndex（单次调用），关键词模糊查询仅用于主体确认、不分页遍历。
 
 ---
 
@@ -192,4 +192,4 @@ product_id：`669e3087d6e30dd7e6d03e55`。
 3. `risk_insight_litigation_risk_profile` → 诉讼风险画像。
 4. 各风险维度明细（严重违法 / 动产抵押 / 开庭公告 / 法院公告 / 知识产权出质 / 行政处罚 / 经营异常 / 限制高消费）。
 
-> 单次报告通常调用 10 个工具；所有维度入参均为企业主体 `matchKeyword` + `keywordType`，分页类可按需控制 `pageSize`。
+> 单次报告通常调用 10 个工具；所有维度入参均为企业主体 `matchKeyword` + `keywordType`，分页类（开庭公告/法院公告/限制高消费）按显式页数预算控制（CLI `--max-pages` 默认 1 页、`pageSize` 最多 50），先计划再执行，不默认全量遍历。
