@@ -17,7 +17,7 @@
         "business-review.json": "65c23bf65252062e89bfd8fa27a5d3f2ca38eb8cbbdaae928e578cb94a98852e",
         "browser-check.json": "ad95c34c95434c5b14403f7ec360145aa3497c6bb44bdb956dd7f76594e0bfba"
       },
-      "audit_record": "../../test-records/live-replaced-20261027/01-supplier-risk.md"
+      "audit_record": "../test-records/live-replaced-20261027/01-supplier-risk.md"
     },
     {
       "skill": "enterprise-risk-skill",
@@ -35,7 +35,7 @@
         "business-review.json": "f4d60758e1708a73b4861f4e91ff9b2f42c36be63d1ea5add54b6812cf5d5f93",
         "browser-check.json": "4e2823df0366ebd5c95ceb7b345541cb136851ad11428cb444981209fa54d2e6"
       },
-      "audit_record": "../../test-records/live-replaced-20261027/02-contract-risk.md"
+      "audit_record": "../test-records/live-replaced-20261027/02-contract-risk.md"
     },
     {
       "skill": "enterprise-risk-skill",
@@ -53,7 +53,7 @@
         "business-review.json": "73e72795f0dcc54a90dfee48bba2cd8a79fd54cc7edd83ac55d304c5cdbea607",
         "browser-check.json": "ab0e8fba864a7e66f26f7a4476a4df97464e6e86274d7124b435ae75d7d7f08a"
       },
-      "audit_record": "../../test-records/live-replaced-20261027/04-brand-risk.md"
+      "audit_record": "../test-records/live-replaced-20261027/04-brand-risk.md"
     },
     {
       "skill": "enterprise-risk-skill",
@@ -71,7 +71,7 @@
         "business-review.json": "0ddc66a6099d35bd3648f03612c51116987f643f0026529f10912001f5dbb9c5",
         "browser-check.json": "f2e451d66ff03cf44876a1f0ea581c9f0fb69e0edec7f64a6aee7745aab80377"
       },
-      "audit_record": "../../test-records/live-replaced-20261027/05-platform-risk.md"
+      "audit_record": "../test-records/live-replaced-20261027/05-platform-risk.md"
     },
     {
       "skill": "enterprise-risk-skill",
@@ -89,7 +89,7 @@
         "business-review.json": "87a0c1b2859328fae2f0158af9c44d1d3bb3fed479b77984e8b24ff87a687c98",
         "browser-check.json": "bb09cd0d64f5e21949828a2638ecd974c99e05f8de14f6e53126c3c703129772"
       },
-      "audit_record": "../../test-records/live-replaced-20261027/07-compact-risk.md"
+      "audit_record": "../test-records/live-replaced-20261027/07-compact-risk.md"
     }
   ]
 }
