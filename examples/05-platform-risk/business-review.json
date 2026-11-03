@@ -1,0 +1,31 @@
+{
+  "id": "05-platform-risk",
+  "verdict": "acceptable",
+  "summary": "本轮正式真实产物已逐项复核；结论限于上游公开数据、本次分页样本及报告声明口径。",
+  "checks": [
+    {
+      "expectation": "行政处罚与经营异常要分维度展示",
+      "status": "pass",
+      "evidence": "core_analysis分别定义penalties与business_anomalies，两个对应调用均status=empty并分别列入empty_products，没有相互替代或伪造0记录。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=北京京东世纪贸易有限公司，match_raw=北京京东世纪贸易有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=2613; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=926; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=2613; 立案公告=59; 法院公告=926; 裁判文书=2291; 被执行人=20; 限制高消费=0; 失信被执行=1; 分维度记录数合计（未去重）=5910]；sections=[score_overview=3, litigation_overview=7, litigation_dist=6, serious_violations=0, chattel_mortgage=0, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+    },
+    {
+      "expectation": "法院公告与开庭公告应保留类型和时间",
+      "status": "pass",
+      "evidence": "开庭与法院公告各保留类型及可用时间，例如辽宁丹东记录“起诉状副本及开庭传票/公告日期2026-10-21”，法院公告刊登日期同为2026-10-21。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=北京京东世纪贸易有限公司，match_raw=北京京东世纪贸易有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=2613; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=926; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=2613; 立案公告=59; 法院公告=926; 裁判文书=2291; 被执行人=20; 限制高消费=0; 失信被执行=1; 分维度记录数合计（未去重）=5910]；sections=[score_overview=3, litigation_overview=7, litigation_dist=6, serious_violations=0, chattel_mortgage=0, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+    },
+    {
+      "expectation": "分页展示数不能冒充事件总数",
+      "status": "pass",
+      "evidence": "调用row_count均10而reported_total分别2613/926；section note明确“上游总数…当前返回10条”，没有用分页展示数冒充总数。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=北京京东世纪贸易有限公司，match_raw=北京京东世纪贸易有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=2613; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=926; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=2613; 立案公告=59; 法院公告=926; 裁判文书=2291; 被执行人=20; 限制高消费=0; 失信被执行=1; 分维度记录数合计（未去重）=5910]；sections=[score_overview=3, litigation_overview=7, litigation_dist=6, serious_violations=0, chattel_mortgage=0, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+    }
+  ],
+  "issues": [],
+  "evidence_binding": {
+    "report.json": "8d0db30a9edebc079597fd3dabd32a1289c47dd0688fc4c2463f1e79932190ae",
+    "report.html": "fdf57d1f19e729e9311aa5e66c851f20142e893f55a340b71fb98460bcd7d4c8",
+    "report.md": "86265a134f7fda7d7401813efb6e80835865514d6be4196626dcdeb10f90edd1",
+    "calls.json": "93a966cedcea33a0dbd626116ab443cf06e1a8b52c903bd18589fc9704b7aba6",
+    "result.json": "f48b96fd6c166469f870794adbb9ed401cde03eb0da787b28972a12a35be0c37",
+    "source_manifest_sha256": "014e0c39ccd221d4b037bfafc75dc705b73521da54c003be18fa8ca62d4dab92"
+  }
+}

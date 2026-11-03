@@ -1,0 +1,267 @@
+[
+  {
+    "tool": "enterprise_risk_insight_score",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "贵州茅台酒股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069030903555000",
+    "elapsed_seconds": 13.71,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "risk_level",
+      "risk_reason",
+      "risk_score"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [
+      {
+        "path": "risk_score",
+        "value": 100
+      }
+    ],
+    "response_sha256": "28d083848c160c21a977d6c585b21235c02302d2e09c5e1f82e546e0d11b85c6"
+  },
+  {
+    "tool": "risk_insight_serious_violations",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "贵州茅台酒股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069030903555000",
+    "elapsed_seconds": 0.778,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_chattel_mortgage",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "贵州茅台酒股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069030903555000",
+    "elapsed_seconds": 1.043,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_court_hearings",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "贵州茅台酒股份有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 8
+    },
+    "invocation_id": "1793069030903555000",
+    "elapsed_seconds": 2.135,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "resultList",
+      "total"
+    ],
+    "row_count": 8,
+    "reported_total": 3032,
+    "numeric_evidence": [
+      {
+        "path": "total",
+        "value": 3032
+      }
+    ],
+    "response_sha256": "dab037b745dafb2c0d4d31816e4fbb80920a9da39be2cdffeaa035776f18cb94"
+  },
+  {
+    "tool": "risk_insight_litigation_risk_profile",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "贵州茅台酒股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069030903555000",
+    "elapsed_seconds": 4.289,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "caKaitingList",
+      "caKaitingTotal",
+      "caLianList",
+      "caLianTotal",
+      "caList",
+      "caTotal",
+      "edTotal",
+      "enforcementList",
+      "enforcementTotal",
+      "jdList",
+      "jdTotal",
+      "limitedTotal"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [
+      {
+        "path": "caKaitingTotal",
+        "value": 3032
+      },
+      {
+        "path": "caLianTotal",
+        "value": 156
+      },
+      {
+        "path": "caTotal",
+        "value": 2559
+      },
+      {
+        "path": "edTotal",
+        "value": 0
+      },
+      {
+        "path": "enforcementTotal",
+        "value": 4
+      },
+      {
+        "path": "jdTotal",
+        "value": 1965
+      },
+      {
+        "path": "limitedTotal",
+        "value": 0
+      }
+    ],
+    "response_sha256": "2be80a41197f4e688ed4755c6585d5a5e2411be971c6c16d601a39ae4e1c1996"
+  },
+  {
+    "tool": "risk_insight_court_announcements",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "贵州茅台酒股份有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 8
+    },
+    "invocation_id": "1793069030903555000",
+    "elapsed_seconds": 0.491,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "resultList",
+      "total"
+    ],
+    "row_count": 8,
+    "reported_total": 2559,
+    "numeric_evidence": [
+      {
+        "path": "total",
+        "value": 2559
+      }
+    ],
+    "response_sha256": "80a5e8ace4943649aee736efc7a77686ee954edef13fe2489228c06ebbd55cba"
+  },
+  {
+    "tool": "risk_insight_intellectual_property_pledge",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "贵州茅台酒股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069030903555000",
+    "elapsed_seconds": 0.934,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_penalties",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "贵州茅台酒股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069030903555000",
+    "elapsed_seconds": 1.028,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_business_anomalies",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "贵州茅台酒股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069030903555000",
+    "elapsed_seconds": 0.583,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_consumption_restrictions",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "贵州茅台酒股份有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 8
+    },
+    "invocation_id": "1793069030903555000",
+    "elapsed_seconds": 1.196,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  }
+]

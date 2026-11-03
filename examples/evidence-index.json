@@ -1,0 +1,95 @@
+{
+  "run_id": "live-replaced-20261027",
+  "cases": [
+    {
+      "skill": "enterprise-risk-skill",
+      "id": "01-supplier-risk",
+      "status": "passed",
+      "positive_business_pass": true,
+      "files_sha256": {
+        "report.json": "0c9f6ce9b3cbac439a6a9be879888f1989cdbd7b7868bd8b5361b8ec71af5e4a",
+        "report.html": "3a387e73be7b59ad5f6f8f1e8b337d8eeb8a51063d16fc62adf58724218f51d1",
+        "report.md": "ab6ea5e510c1215747d9428df8405ed791dc6416aa1117df1c37f8cafca52b21",
+        "calls.json": "af55d5f1cf2c1b321299f35bbe45afb95cee7fc6bc01e69b800ad18292285cf6",
+        "result.json": "e88a6ccddf3789975feedb1a0337b8934fb13513b2463868e98760e5239dd8b8",
+        "audit.json": "bc85aebbe75f9b9862f65308829baa625ec3b487c1e09a78bfb39da9c6eec791",
+        "acceptance.json": "7e8416bc724f8b0cf40f2fc036423f78861e7c521eec7202aa3728541aec2742",
+        "business-review.json": "65c23bf65252062e89bfd8fa27a5d3f2ca38eb8cbbdaae928e578cb94a98852e",
+        "browser-check.json": "ad95c34c95434c5b14403f7ec360145aa3497c6bb44bdb956dd7f76594e0bfba"
+      },
+      "audit_record": "../../test-records/live-replaced-20261027/01-supplier-risk.md"
+    },
+    {
+      "skill": "enterprise-risk-skill",
+      "id": "02-contract-risk",
+      "status": "passed",
+      "positive_business_pass": true,
+      "files_sha256": {
+        "report.json": "da302348298cca4b36a30733f4cb1fc9fc71de7d804a3d0565e3c7035b28f86d",
+        "report.html": "07e7b4a174dc861dc96afdf42b5c13be1a7cc91892bb4de7f73efa5e676ed04f",
+        "report.md": "3ee36b6f72bff452a06fb287d902d3c55f0eaf81c4b4628f932bfb656a01cf3c",
+        "calls.json": "74e91f53421c376e041c5cbd4b762553925583d23484b9350652ace1db7bd0d5",
+        "result.json": "7b598b148af44a2151211f4bb15b3f8d3098568779835762e0c65cc21810d023",
+        "audit.json": "f4d062c5d5ad4e660479bd05b7a42e6f8235fcb34d12bd6be81d56e666d6ab83",
+        "acceptance.json": "5ed31efc4c8198f15a0b4e13a546de874c3573eee45177e645a3483ee34b2c28",
+        "business-review.json": "f4d60758e1708a73b4861f4e91ff9b2f42c36be63d1ea5add54b6812cf5d5f93",
+        "browser-check.json": "4e2823df0366ebd5c95ceb7b345541cb136851ad11428cb444981209fa54d2e6"
+      },
+      "audit_record": "../../test-records/live-replaced-20261027/02-contract-risk.md"
+    },
+    {
+      "skill": "enterprise-risk-skill",
+      "id": "04-brand-risk",
+      "status": "passed",
+      "positive_business_pass": true,
+      "files_sha256": {
+        "report.json": "3b7f4f404383e941e1bdbd2755aa78d12d50b576753a55a063dc056c06be50f8",
+        "report.html": "f6f1d05b08e8da02f806c0c325fb0dd8a0f45b38b60e1ec6a09367d5837dfb3e",
+        "report.md": "7b27066078ca25a06a4b881949641a465b2c2125ce75d03f5fd02742591382a8",
+        "calls.json": "2bac8bbf6755aeabc34503791ba22de5172ff66d6594dc4392de44edbf626da8",
+        "result.json": "4d34bd6b0b18257642098d7a2b48532851cbc5e53dd79691f2a276bde4bdf159",
+        "audit.json": "61440f7448e62c2da15850c3ef8180bcf7c3ab921105c2b4696ae5d8e418cac4",
+        "acceptance.json": "03aee8d285e43658854a3d7acb898b2cee5eaae8bad5906c4a013d35c8508177",
+        "business-review.json": "73e72795f0dcc54a90dfee48bba2cd8a79fd54cc7edd83ac55d304c5cdbea607",
+        "browser-check.json": "ab0e8fba864a7e66f26f7a4476a4df97464e6e86274d7124b435ae75d7d7f08a"
+      },
+      "audit_record": "../../test-records/live-replaced-20261027/04-brand-risk.md"
+    },
+    {
+      "skill": "enterprise-risk-skill",
+      "id": "05-platform-risk",
+      "status": "passed",
+      "positive_business_pass": true,
+      "files_sha256": {
+        "report.json": "8d0db30a9edebc079597fd3dabd32a1289c47dd0688fc4c2463f1e79932190ae",
+        "report.html": "fdf57d1f19e729e9311aa5e66c851f20142e893f55a340b71fb98460bcd7d4c8",
+        "report.md": "86265a134f7fda7d7401813efb6e80835865514d6be4196626dcdeb10f90edd1",
+        "calls.json": "93a966cedcea33a0dbd626116ab443cf06e1a8b52c903bd18589fc9704b7aba6",
+        "result.json": "f48b96fd6c166469f870794adbb9ed401cde03eb0da787b28972a12a35be0c37",
+        "audit.json": "c049731bd5ea300e0708cb4534fce3b878ff2befa6b8904b99609d26e1b29488",
+        "acceptance.json": "554bd377a9c9cd5e2a833e60f3e0752d278ea0223b0a36a43c5734e0ecb53503",
+        "business-review.json": "0ddc66a6099d35bd3648f03612c51116987f643f0026529f10912001f5dbb9c5",
+        "browser-check.json": "f2e451d66ff03cf44876a1f0ea581c9f0fb69e0edec7f64a6aee7745aab80377"
+      },
+      "audit_record": "../../test-records/live-replaced-20261027/05-platform-risk.md"
+    },
+    {
+      "skill": "enterprise-risk-skill",
+      "id": "07-compact-risk",
+      "status": "passed",
+      "positive_business_pass": true,
+      "files_sha256": {
+        "report.json": "972fdbda6707a02e1b2a1a5602998694edfa46ac4252c0a2b81d5c6236bb125b",
+        "report.html": "6330f4f77c4f1427bae026ff7498368c19c8456eafab3fcd06cc70f8aa8a846e",
+        "report.md": "520e370464efb45a99dbd6338178e9002e42e08923d4cd755f6894d21607cef0",
+        "calls.json": "e10c91ddac669c1033d2ce5d6650c94c84e7bdb792782e92e2d23483afaa172c",
+        "result.json": "3a4cbce42c8c596e582338877e3f0d679d371d2e455460f9c5fedc114a726b13",
+        "audit.json": "57f05817c32da9da889042e09dee9887de92b23bcf5f8839998dc09366db2215",
+        "acceptance.json": "4314598e46a7e4bd25a17e74f3e0b6df7394e84b97f353052f5e09ce09f71d57",
+        "business-review.json": "87a0c1b2859328fae2f0158af9c44d1d3bb3fed479b77984e8b24ff87a687c98",
+        "browser-check.json": "bb09cd0d64f5e21949828a2638ecd974c99e05f8de14f6e53126c3c703129772"
+      },
+      "audit_record": "../../test-records/live-replaced-20261027/07-compact-risk.md"
+    }
+  ]
+}

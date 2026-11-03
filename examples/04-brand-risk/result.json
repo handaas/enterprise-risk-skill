@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "skill": "enterprise-risk-skill",
+  "case_id": "04-brand-risk",
+  "title": "品牌合作负面风险核验",
+  "invocation_id": "1793069030903555000",
+  "provenance": {
+    "integrator_id": "683e574805537ace146cc05e",
+    "runner_sha256": "05777c2f2b0791cb5157aef691206606dade8df7af3b17212285b7ae74632a66",
+    "credential_policy_sha256": "bcabf08a1ca92f28357c0e57a8bae9bfa910eb1d4b204d8195ee3b7a77106eed",
+    "scenario_sha256": "6fbf5f6ba6eda3ca05a420b12b937d310f0274a5298c5910fdf2aa28e375fbee",
+    "skill_source_hashes": {
+      "scripts/common.py": "f4b49bc8aa9836e6c13308ac179c3ca39624cd290582eedb49306f023cd457a4",
+      "scripts/compose_report.py": "5d625bee8c60adb9461f1385d2b4f3ed7836157322adfdabdcc1b5f623bd6c65",
+      "scripts/mcp_client.py": "47528bfa7612b927cb0ba9697b2f9a8045568423365a79c7e6a9e12fcbfbc5a7",
+      "scripts/render_report.py": "195ededda5d56aefc2379e72b152d6e07857d3669645e6319dd7e83c9419901a",
+      "scripts/validate_config.py": "0674e86478a9298a553a6c1be09aad1a3b13e46833f53c2b8f45a8ce0ce4fc50"
+    },
+    "upstream_source_hashes": {
+      "enterprise-risk-mcp-server": "4746f577771186ab453261234ba8cd230cae4398d4a2780776019aecf5b2cc6b"
+    },
+    "upstream_dependency_hashes": {
+      "enterprise-risk-mcp-server/server/mcp_server.py": "4746f577771186ab453261234ba8cd230cae4398d4a2780776019aecf5b2cc6b"
+    }
+  },
+  "source_changed_during_run": false,
+  "started_at": "2026-10-27T10:43:50+08:00",
+  "elapsed_seconds": 26.305,
+  "returncode": 0,
+  "exception_type": null,
+  "command": "python3 enterprise-risk-skill/scripts/compose_report.py --enterprise '贵州茅台酒股份有限公司' --page-size 8 --output enterprise-risk-skill/output/live-replaced-20261027/04-brand-risk/report.json --report-output enterprise-risk-skill/output/live-replaced-20261027/04-brand-risk/report.html",
+  "transport": "local MCP servers via loopback streamable-http",
+  "cache_used": false,
+  "call_count": 10,
+  "successful_data_calls": 4,
+  "empty_calls": 6,
+  "failed_calls": 0,
+  "checks": {
+    "issues": [],
+    "warnings": [],
+    "coverage_pct": 45,
+    "subject": {
+      "enterprise": "贵州茅台酒股份有限公司",
+      "matchKeyword": "贵州茅台酒股份有限公司",
+      "keywordType": "name",
+      "match_raw": "贵州茅台酒股份有限公司",
+      "resolved": true,
+      "resolve_reason": "用户提供企业全称"
+    },
+    "title": "贵州茅台酒股份有限公司 企业风险分析报告",
+    "data_mode": null,
+    "metrics": [
+      {
+        "label": "上游模型评分",
+        "value": "100",
+        "hint": "上游模型输出（满分 100），需与风险明细交叉核验"
+      },
+      {
+        "label": "上游模型等级",
+        "value": "低风险",
+        "hint": "上游模型输出，不代表报告综合定性"
+      },
+      {
+        "label": "开庭公告",
+        "value": "3032",
+        "hint": "开庭公告记录数"
+      },
+      {
+        "label": "立案公告",
+        "value": "156",
+        "hint": "立案公告记录数"
+      },
+      {
+        "label": "法院公告",
+        "value": "2559",
+        "hint": "法院公告记录数"
+      },
+      {
+        "label": "裁判文书",
+        "value": "1965",
+        "hint": "裁判文书记录数"
+      },
+      {
+        "label": "被执行人",
+        "value": "4",
+        "hint": "被执行人记录数"
+      },
+      {
+        "label": "限制高消费",
+        "value": "0",
+        "hint": "限制高消费记录数"
+      },
+      {
+        "label": "失信被执行",
+        "value": "0",
+        "hint": "失信被执行人记录数"
+      },
+      {
+        "label": "分维度记录数合计（未去重）",
+        "value": "7716",
+        "hint": "诉讼画像各司法阶段合计（未跨阶段事件去重，不含抵押、处罚等其他产品），不代表独立案件数"
+      }
+    ],
+    "quality_report": {
+      "total_sections": 11,
+      "populated_sections": 5,
+      "empty_sections": 6,
+      "coverage_pct": 45
+    },
+    "unregistered_tools": [],
+    "checks": {
+      "json_html_markdown": true,
+      "explicit_live": true,
+      "tool_calls_recorded": 10,
+      "offline_scripts": true,
+      "independent_rerender": true
+    }
+  },
+  "status": "passed",
+  "source_hashes": {
+    "scripts/common.py": "f4b49bc8aa9836e6c13308ac179c3ca39624cd290582eedb49306f023cd457a4",
+    "scripts/compose_report.py": "5d625bee8c60adb9461f1385d2b4f3ed7836157322adfdabdcc1b5f623bd6c65",
+    "scripts/mcp_client.py": "47528bfa7612b927cb0ba9697b2f9a8045568423365a79c7e6a9e12fcbfbc5a7",
+    "scripts/render_report.py": "195ededda5d56aefc2379e72b152d6e07857d3669645e6319dd7e83c9419901a",
+    "scripts/validate_config.py": "0674e86478a9298a553a6c1be09aad1a3b13e46833f53c2b8f45a8ce0ce4fc50"
+  }
+}

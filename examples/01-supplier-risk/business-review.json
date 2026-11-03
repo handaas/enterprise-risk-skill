@@ -1,0 +1,36 @@
+{
+  "id": "01-supplier-risk",
+  "verdict": "acceptable",
+  "summary": "本轮正式真实产物已逐项复核；结论限于上游公开数据、本次分页样本及报告声明口径。",
+  "checks": [
+    {
+      "expectation": "评分与各风险事件必须分开解释",
+      "status": "pass",
+      "evidence": "评分100/上游等级低风险单列；司法画像229开庭、137法院公告、97裁判、2被执行及动产抵押11分别呈现，且明确上游等级不代表总体定性。 本轮实际产物：technical_status=passed，successful_data_calls=5，subject.enterprise=宁德时代新能源科技股份有限公司，match_raw=宁德时代新能源科技股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:data,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=229; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=137; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=229; 立案公告=1; 法院公告=137; 裁判文书=97; 被执行人=2; 限制高消费=0; 失信被执行=0; 动产抵押=11; 分维度记录数合计（未去重）=466]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=11, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":6,\"empty_sections\":5,\"coverage_pct\":55}。"
+    },
+    {
+      "expectation": "处罚、异常和限高的零/空语义应严格区分",
+      "status": "pass",
+      "evidence": "penalties/business_anomalies/consumption_restrictions调用均status=empty并进入data_source.empty_products；诉讼画像limitedTotal=0作为上游真实数值展示，未把空调用伪造成0条明细。 本轮实际产物：technical_status=passed，successful_data_calls=5，subject.enterprise=宁德时代新能源科技股份有限公司，match_raw=宁德时代新能源科技股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:data,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=229; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=137; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=229; 立案公告=1; 法院公告=137; 裁判文书=97; 被执行人=2; 限制高消费=0; 失信被执行=0; 动产抵押=11; 分维度记录数合计（未去重）=466]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=11, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":6,\"empty_sections\":5,\"coverage_pct\":55}。"
+    },
+    {
+      "expectation": "事件日期和案号应按源数据保留",
+      "status": "pass",
+      "evidence": "开庭/法院公告保留可用案号与日期，如(2026)闽0212民初1369号、(2025)京73行初18536号及刊登日期2026-02-11；源缺失值保留“-”。 本轮实际产物：technical_status=passed，successful_data_calls=5，subject.enterprise=宁德时代新能源科技股份有限公司，match_raw=宁德时代新能源科技股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:data,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=229; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=137; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=229; 立案公告=1; 法院公告=137; 裁判文书=97; 被执行人=2; 限制高消费=0; 失信被执行=0; 动产抵押=11; 分维度记录数合计（未去重）=466]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=11, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":6,\"empty_sections\":5,\"coverage_pct\":55}。"
+    },
+    {
+      "expectation": "不得因单一事件输出自动否决结论",
+      "status": "pass",
+      "evidence": "洞察明确司法阶段计数无当事人角色、裁判结果或履行状态，不能推断责任、败诉、未履行或失信，也没有自动否决结论。 本轮实际产物：technical_status=passed，successful_data_calls=5，subject.enterprise=宁德时代新能源科技股份有限公司，match_raw=宁德时代新能源科技股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:data,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=229; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=137; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=229; 立案公告=1; 法院公告=137; 裁判文书=97; 被执行人=2; 限制高消费=0; 失信被执行=0; 动产抵押=11; 分维度记录数合计（未去重）=466]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=11, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":6,\"empty_sections\":5,\"coverage_pct\":55}。"
+    }
+  ],
+  "issues": [],
+  "evidence_binding": {
+    "report.json": "0c9f6ce9b3cbac439a6a9be879888f1989cdbd7b7868bd8b5361b8ec71af5e4a",
+    "report.html": "3a387e73be7b59ad5f6f8f1e8b337d8eeb8a51063d16fc62adf58724218f51d1",
+    "report.md": "ab6ea5e510c1215747d9428df8405ed791dc6416aa1117df1c37f8cafca52b21",
+    "calls.json": "af55d5f1cf2c1b321299f35bbe45afb95cee7fc6bc01e69b800ad18292285cf6",
+    "result.json": "e88a6ccddf3789975feedb1a0337b8934fb13513b2463868e98760e5239dd8b8",
+    "source_manifest_sha256": "014e0c39ccd221d4b037bfafc75dc705b73521da54c003be18fa8ca62d4dab92"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "04-brand-risk",
+  "verdict": "acceptable",
+  "summary": "本轮正式真实产物已逐项复核；结论限于上游公开数据、本次分页样本及报告声明口径。",
+  "checks": [
+    {
+      "expectation": "无事件返回不得写成权威的“零风险”",
+      "status": "pass",
+      "evidence": "虽上游评分100/等级低风险，报告同时列开庭3032、法院公告2559、裁判1965并明确“不能据此认定总体低风险”。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=贵州茅台酒股份有限公司，match_raw=贵州茅台酒股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=8,total=3032; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=8,total=2559; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=3032; 立案公告=156; 法院公告=2559; 裁判文书=1965; 被执行人=4; 限制高消费=0; 失信被执行=0; 分维度记录数合计（未去重）=7716]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=0, court_hearings=8, court_announcements=8, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+    },
+    {
+      "expectation": "相同主体名称应贯穿全部风险维度",
+      "status": "pass",
+      "evidence": "subject及全部10个调用arguments.matchKeyword均为“贵州茅台酒股份有限公司”，未混入其他主体。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=贵州茅台酒股份有限公司，match_raw=贵州茅台酒股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=8,total=3032; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=8,total=2559; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=3032; 立案公告=156; 法院公告=2559; 裁判文书=1965; 被执行人=4; 限制高消费=0; 失信被执行=0; 分维度记录数合计（未去重）=7716]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=0, court_hearings=8, court_announcements=8, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+    },
+    {
+      "expectation": "摘要应突出已返回事实和数据局限",
+      "status": "pass",
+      "evidence": "摘要只列实际覆盖的评分、诉讼画像/分布、开庭和法院公告，并说明不含角色、裁判结果或履行状态；quality=5/11、45%。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=贵州茅台酒股份有限公司，match_raw=贵州茅台酒股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=8,total=3032; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=8,total=2559; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=3032; 立案公告=156; 法院公告=2559; 裁判文书=1965; 被执行人=4; 限制高消费=0; 失信被执行=0; 分维度记录数合计（未去重）=7716]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=0, court_hearings=8, court_announcements=8, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+    }
+  ],
+  "issues": [],
+  "evidence_binding": {
+    "report.json": "3b7f4f404383e941e1bdbd2755aa78d12d50b576753a55a063dc056c06be50f8",
+    "report.html": "f6f1d05b08e8da02f806c0c325fb0dd8a0f45b38b60e1ec6a09367d5837dfb3e",
+    "report.md": "7b27066078ca25a06a4b881949641a465b2c2125ce75d03f5fd02742591382a8",
+    "calls.json": "2bac8bbf6755aeabc34503791ba22de5172ff66d6594dc4392de44edbf626da8",
+    "result.json": "4d34bd6b0b18257642098d7a2b48532851cbc5e53dd79691f2a276bde4bdf159",
+    "source_manifest_sha256": "014e0c39ccd221d4b037bfafc75dc705b73521da54c003be18fa8ca62d4dab92"
+  }
+}

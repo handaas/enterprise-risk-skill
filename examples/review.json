@@ -1,0 +1,167 @@
+{
+  "schema_version": 2,
+  "run_id": "live-replaced-20261027",
+  "review_scope": "仅筛选原已验收的正向案例；未重新调用或改写业务结论",
+  "cases": [
+    {
+      "id": "01-supplier-risk",
+      "verdict": "acceptable",
+      "summary": "本轮正式真实产物已逐项复核；结论限于上游公开数据、本次分页样本及报告声明口径。",
+      "checks": [
+        {
+          "expectation": "评分与各风险事件必须分开解释",
+          "status": "pass",
+          "evidence": "评分100/上游等级低风险单列；司法画像229开庭、137法院公告、97裁判、2被执行及动产抵押11分别呈现，且明确上游等级不代表总体定性。 本轮实际产物：technical_status=passed，successful_data_calls=5，subject.enterprise=宁德时代新能源科技股份有限公司，match_raw=宁德时代新能源科技股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:data,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=229; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=137; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=229; 立案公告=1; 法院公告=137; 裁判文书=97; 被执行人=2; 限制高消费=0; 失信被执行=0; 动产抵押=11; 分维度记录数合计（未去重）=466]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=11, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":6,\"empty_sections\":5,\"coverage_pct\":55}。"
+        },
+        {
+          "expectation": "处罚、异常和限高的零/空语义应严格区分",
+          "status": "pass",
+          "evidence": "penalties/business_anomalies/consumption_restrictions调用均status=empty并进入data_source.empty_products；诉讼画像limitedTotal=0作为上游真实数值展示，未把空调用伪造成0条明细。 本轮实际产物：technical_status=passed，successful_data_calls=5，subject.enterprise=宁德时代新能源科技股份有限公司，match_raw=宁德时代新能源科技股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:data,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=229; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=137; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=229; 立案公告=1; 法院公告=137; 裁判文书=97; 被执行人=2; 限制高消费=0; 失信被执行=0; 动产抵押=11; 分维度记录数合计（未去重）=466]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=11, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":6,\"empty_sections\":5,\"coverage_pct\":55}。"
+        },
+        {
+          "expectation": "事件日期和案号应按源数据保留",
+          "status": "pass",
+          "evidence": "开庭/法院公告保留可用案号与日期，如(2026)闽0212民初1369号、(2025)京73行初18536号及刊登日期2026-02-11；源缺失值保留“-”。 本轮实际产物：technical_status=passed，successful_data_calls=5，subject.enterprise=宁德时代新能源科技股份有限公司，match_raw=宁德时代新能源科技股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:data,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=229; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=137; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=229; 立案公告=1; 法院公告=137; 裁判文书=97; 被执行人=2; 限制高消费=0; 失信被执行=0; 动产抵押=11; 分维度记录数合计（未去重）=466]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=11, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":6,\"empty_sections\":5,\"coverage_pct\":55}。"
+        },
+        {
+          "expectation": "不得因单一事件输出自动否决结论",
+          "status": "pass",
+          "evidence": "洞察明确司法阶段计数无当事人角色、裁判结果或履行状态，不能推断责任、败诉、未履行或失信，也没有自动否决结论。 本轮实际产物：technical_status=passed，successful_data_calls=5，subject.enterprise=宁德时代新能源科技股份有限公司，match_raw=宁德时代新能源科技股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:data,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=229; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=137; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=229; 立案公告=1; 法院公告=137; 裁判文书=97; 被执行人=2; 限制高消费=0; 失信被执行=0; 动产抵押=11; 分维度记录数合计（未去重）=466]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=11, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":6,\"empty_sections\":5,\"coverage_pct\":55}。"
+        }
+      ],
+      "issues": [],
+      "evidence_binding": {
+        "report.json": "0c9f6ce9b3cbac439a6a9be879888f1989cdbd7b7868bd8b5361b8ec71af5e4a",
+        "report.html": "3a387e73be7b59ad5f6f8f1e8b337d8eeb8a51063d16fc62adf58724218f51d1",
+        "report.md": "ab6ea5e510c1215747d9428df8405ed791dc6416aa1117df1c37f8cafca52b21",
+        "calls.json": "af55d5f1cf2c1b321299f35bbe45afb95cee7fc6bc01e69b800ad18292285cf6",
+        "result.json": "e88a6ccddf3789975feedb1a0337b8934fb13513b2463868e98760e5239dd8b8",
+        "source_manifest_sha256": "014e0c39ccd221d4b037bfafc75dc705b73521da54c003be18fa8ca62d4dab92"
+      }
+    },
+    {
+      "id": "02-contract-risk",
+      "verdict": "acceptable",
+      "summary": "本轮正式真实产物已逐项复核；结论限于上游公开数据、本次分页样本及报告声明口径。",
+      "checks": [
+        {
+          "expectation": "开庭与法院公告不得重复视为两个独立案件",
+          "status": "pass",
+          "evidence": "开庭17512与法院公告5739作为阶段记录分列；合计31775明确标“未去重”，洞察说明同案可能跨阶段重复，不能当独立案件数。 本轮实际产物：technical_status=passed，successful_data_calls=6，subject.enterprise=中国建筑第八工程局有限公司，match_raw=中国建筑第八工程局有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=17512; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=5739; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:data,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:data,rows=5,total=5]；metrics=[上游模型评分=59; 上游模型等级=高风险; 开庭公告=17512; 立案公告=165; 法院公告=5739; 裁判文书=7812; 被执行人=536; 限制高消费=5; 失信被执行=6; 行政处罚=3; 分维度记录数合计（未去重）=31775; 当前返回行政处罚明细数=3; 当前返回限高明细数=5]；sections=[score_overview=3, litigation_overview=7, litigation_dist=7, serious_violations=0, chattel_mortgage=0, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=3, business_anomalies=0, consumption_restrictions=5]；quality_report={\"total_sections\":11,\"populated_sections\":7,\"empty_sections\":4,\"coverage_pct\":64}。"
+        },
+        {
+          "expectation": "诉讼画像是统计而非裁判结论",
+          "status": "pass",
+          "evidence": "摘要说明阶段计数不含角色/裁判结果/履行状态；59分与上游“高风险”原样呈现且未再按本地分数区间改写。 本轮实际产物：technical_status=passed，successful_data_calls=6，subject.enterprise=中国建筑第八工程局有限公司，match_raw=中国建筑第八工程局有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=17512; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=5739; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:data,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:data,rows=5,total=5]；metrics=[上游模型评分=59; 上游模型等级=高风险; 开庭公告=17512; 立案公告=165; 法院公告=5739; 裁判文书=7812; 被执行人=536; 限制高消费=5; 失信被执行=6; 行政处罚=3; 分维度记录数合计（未去重）=31775; 当前返回行政处罚明细数=3; 当前返回限高明细数=5]；sections=[score_overview=3, litigation_overview=7, litigation_dist=7, serious_violations=0, chattel_mortgage=0, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=3, business_anomalies=0, consumption_restrictions=5]；quality_report={\"total_sections\":11,\"populated_sections\":7,\"empty_sections\":4,\"coverage_pct\":64}。"
+        },
+        {
+          "expectation": "抵押记录需保留登记信息和状态（若返回）",
+          "status": "pass",
+          "evidence": "risk_insight_chattel_mortgage status=empty，因此未生成抵押记录或状态；条件“若返回”不适用且无伪造。 本轮实际产物：technical_status=passed，successful_data_calls=6，subject.enterprise=中国建筑第八工程局有限公司，match_raw=中国建筑第八工程局有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=17512; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=5739; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:data,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:data,rows=5,total=5]；metrics=[上游模型评分=59; 上游模型等级=高风险; 开庭公告=17512; 立案公告=165; 法院公告=5739; 裁判文书=7812; 被执行人=536; 限制高消费=5; 失信被执行=6; 行政处罚=3; 分维度记录数合计（未去重）=31775; 当前返回行政处罚明细数=3; 当前返回限高明细数=5]；sections=[score_overview=3, litigation_overview=7, litigation_dist=7, serious_violations=0, chattel_mortgage=0, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=3, business_anomalies=0, consumption_restrictions=5]；quality_report={\"total_sections\":11,\"populated_sections\":7,\"empty_sections\":4,\"coverage_pct\":64}。"
+        }
+      ],
+      "issues": [],
+      "evidence_binding": {
+        "report.json": "da302348298cca4b36a30733f4cb1fc9fc71de7d804a3d0565e3c7035b28f86d",
+        "report.html": "07e7b4a174dc861dc96afdf42b5c13be1a7cc91892bb4de7f73efa5e676ed04f",
+        "report.md": "3ee36b6f72bff452a06fb287d902d3c55f0eaf81c4b4628f932bfb656a01cf3c",
+        "calls.json": "74e91f53421c376e041c5cbd4b762553925583d23484b9350652ace1db7bd0d5",
+        "result.json": "7b598b148af44a2151211f4bb15b3f8d3098568779835762e0c65cc21810d023",
+        "source_manifest_sha256": "014e0c39ccd221d4b037bfafc75dc705b73521da54c003be18fa8ca62d4dab92"
+      }
+    },
+    {
+      "id": "04-brand-risk",
+      "verdict": "acceptable",
+      "summary": "本轮正式真实产物已逐项复核；结论限于上游公开数据、本次分页样本及报告声明口径。",
+      "checks": [
+        {
+          "expectation": "无事件返回不得写成权威的“零风险”",
+          "status": "pass",
+          "evidence": "虽上游评分100/等级低风险，报告同时列开庭3032、法院公告2559、裁判1965并明确“不能据此认定总体低风险”。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=贵州茅台酒股份有限公司，match_raw=贵州茅台酒股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=8,total=3032; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=8,total=2559; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=3032; 立案公告=156; 法院公告=2559; 裁判文书=1965; 被执行人=4; 限制高消费=0; 失信被执行=0; 分维度记录数合计（未去重）=7716]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=0, court_hearings=8, court_announcements=8, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+        },
+        {
+          "expectation": "相同主体名称应贯穿全部风险维度",
+          "status": "pass",
+          "evidence": "subject及全部10个调用arguments.matchKeyword均为“贵州茅台酒股份有限公司”，未混入其他主体。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=贵州茅台酒股份有限公司，match_raw=贵州茅台酒股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=8,total=3032; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=8,total=2559; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=3032; 立案公告=156; 法院公告=2559; 裁判文书=1965; 被执行人=4; 限制高消费=0; 失信被执行=0; 分维度记录数合计（未去重）=7716]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=0, court_hearings=8, court_announcements=8, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+        },
+        {
+          "expectation": "摘要应突出已返回事实和数据局限",
+          "status": "pass",
+          "evidence": "摘要只列实际覆盖的评分、诉讼画像/分布、开庭和法院公告，并说明不含角色、裁判结果或履行状态；quality=5/11、45%。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=贵州茅台酒股份有限公司，match_raw=贵州茅台酒股份有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=8,total=3032; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=8,total=2559; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=3032; 立案公告=156; 法院公告=2559; 裁判文书=1965; 被执行人=4; 限制高消费=0; 失信被执行=0; 分维度记录数合计（未去重）=7716]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=0, court_hearings=8, court_announcements=8, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+        }
+      ],
+      "issues": [],
+      "evidence_binding": {
+        "report.json": "3b7f4f404383e941e1bdbd2755aa78d12d50b576753a55a063dc056c06be50f8",
+        "report.html": "f6f1d05b08e8da02f806c0c325fb0dd8a0f45b38b60e1ec6a09367d5837dfb3e",
+        "report.md": "7b27066078ca25a06a4b881949641a465b2c2125ce75d03f5fd02742591382a8",
+        "calls.json": "2bac8bbf6755aeabc34503791ba22de5172ff66d6594dc4392de44edbf626da8",
+        "result.json": "4d34bd6b0b18257642098d7a2b48532851cbc5e53dd79691f2a276bde4bdf159",
+        "source_manifest_sha256": "014e0c39ccd221d4b037bfafc75dc705b73521da54c003be18fa8ca62d4dab92"
+      }
+    },
+    {
+      "id": "05-platform-risk",
+      "verdict": "acceptable",
+      "summary": "本轮正式真实产物已逐项复核；结论限于上游公开数据、本次分页样本及报告声明口径。",
+      "checks": [
+        {
+          "expectation": "行政处罚与经营异常要分维度展示",
+          "status": "pass",
+          "evidence": "core_analysis分别定义penalties与business_anomalies，两个对应调用均status=empty并分别列入empty_products，没有相互替代或伪造0记录。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=北京京东世纪贸易有限公司，match_raw=北京京东世纪贸易有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=2613; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=926; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=2613; 立案公告=59; 法院公告=926; 裁判文书=2291; 被执行人=20; 限制高消费=0; 失信被执行=1; 分维度记录数合计（未去重）=5910]；sections=[score_overview=3, litigation_overview=7, litigation_dist=6, serious_violations=0, chattel_mortgage=0, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+        },
+        {
+          "expectation": "法院公告与开庭公告应保留类型和时间",
+          "status": "pass",
+          "evidence": "开庭与法院公告各保留类型及可用时间，例如辽宁丹东记录“起诉状副本及开庭传票/公告日期2026-10-21”，法院公告刊登日期同为2026-10-21。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=北京京东世纪贸易有限公司，match_raw=北京京东世纪贸易有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=2613; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=926; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=2613; 立案公告=59; 法院公告=926; 裁判文书=2291; 被执行人=20; 限制高消费=0; 失信被执行=1; 分维度记录数合计（未去重）=5910]；sections=[score_overview=3, litigation_overview=7, litigation_dist=6, serious_violations=0, chattel_mortgage=0, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+        },
+        {
+          "expectation": "分页展示数不能冒充事件总数",
+          "status": "pass",
+          "evidence": "调用row_count均10而reported_total分别2613/926；section note明确“上游总数…当前返回10条”，没有用分页展示数冒充总数。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=北京京东世纪贸易有限公司，match_raw=北京京东世纪贸易有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=10,total=2613; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=10,total=926; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=100; 上游模型等级=低风险; 开庭公告=2613; 立案公告=59; 法院公告=926; 裁判文书=2291; 被执行人=20; 限制高消费=0; 失信被执行=1; 分维度记录数合计（未去重）=5910]；sections=[score_overview=3, litigation_overview=7, litigation_dist=6, serious_violations=0, chattel_mortgage=0, court_hearings=10, court_announcements=10, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+        }
+      ],
+      "issues": [],
+      "evidence_binding": {
+        "report.json": "8d0db30a9edebc079597fd3dabd32a1289c47dd0688fc4c2463f1e79932190ae",
+        "report.html": "fdf57d1f19e729e9311aa5e66c851f20142e893f55a340b71fb98460bcd7d4c8",
+        "report.md": "86265a134f7fda7d7401813efb6e80835865514d6be4196626dcdeb10f90edd1",
+        "calls.json": "93a966cedcea33a0dbd626116ab443cf06e1a8b52c903bd18589fc9704b7aba6",
+        "result.json": "f48b96fd6c166469f870794adbb9ed401cde03eb0da787b28972a12a35be0c37",
+        "source_manifest_sha256": "014e0c39ccd221d4b037bfafc75dc705b73521da54c003be18fa8ca62d4dab92"
+      }
+    },
+    {
+      "id": "07-compact-risk",
+      "verdict": "acceptable",
+      "summary": "本轮正式真实产物已逐项复核；结论限于上游公开数据、本次分页样本及报告声明口径。",
+      "checks": [
+        {
+          "expectation": "每个分页事件章节不超过 5 条或按实际返回",
+          "status": "pass",
+          "evidence": "两个分页调用pageSize=5、row_count=5；core court_hearings/court_announcements各5行。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=华为技术有限公司，match_raw=华为技术有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=5,total=4401; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=5,total=6341; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=99; 上游模型等级=低风险; 开庭公告=4401; 立案公告=1325; 法院公告=6341; 裁判文书=3373; 被执行人=5; 限制高消费=0; 失信被执行=0; 分维度记录数合计（未去重）=15445]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=0, court_hearings=5, court_announcements=5, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+        },
+        {
+          "expectation": "总量与样本记录数量应明确区分",
+          "status": "pass",
+          "evidence": "section note分别写上游总数4401/6341、当前返回5条；指标使用上游总量，不把5条样本冒充总数。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=华为技术有限公司，match_raw=华为技术有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=5,total=4401; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=5,total=6341; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=99; 上游模型等级=低风险; 开庭公告=4401; 立案公告=1325; 法院公告=6341; 裁判文书=3373; 被执行人=5; 限制高消费=0; 失信被执行=0; 分维度记录数合计（未去重）=15445]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=0, court_hearings=5, court_announcements=5, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+        },
+        {
+          "expectation": "代表记录应能回溯至核心章节",
+          "status": "pass",
+          "evidence": "representative_records 5条逐条来自court_hearings，例如(2025)粤0309民初45884号、深圳龙华法院，字段可回溯。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=华为技术有限公司，match_raw=华为技术有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=5,total=4401; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=5,total=6341; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=99; 上游模型等级=低风险; 开庭公告=4401; 立案公告=1325; 法院公告=6341; 裁判文书=3373; 被执行人=5; 限制高消费=0; 失信被执行=0; 分维度记录数合计（未去重）=15445]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=0, court_hearings=5, court_announcements=5, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+        }
+      ],
+      "issues": [],
+      "evidence_binding": {
+        "report.json": "972fdbda6707a02e1b2a1a5602998694edfa46ac4252c0a2b81d5c6236bb125b",
+        "report.html": "6330f4f77c4f1427bae026ff7498368c19c8456eafab3fcd06cc70f8aa8a846e",
+        "report.md": "520e370464efb45a99dbd6338178e9002e42e08923d4cd755f6894d21607cef0",
+        "calls.json": "e10c91ddac669c1033d2ce5d6650c94c84e7bdb792782e92e2d23483afaa172c",
+        "result.json": "3a4cbce42c8c596e582338877e3f0d679d371d2e455460f9c5fedc114a726b13",
+        "source_manifest_sha256": "014e0c39ccd221d4b037bfafc75dc705b73521da54c003be18fa8ca62d4dab92"
+      }
+    }
+  ]
+}

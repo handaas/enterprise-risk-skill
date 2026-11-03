@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "skill": "enterprise-risk-skill",
+  "case_id": "07-compact-risk",
+  "title": "管理层风险快报",
+  "invocation_id": "1793069055561773000",
+  "provenance": {
+    "integrator_id": "683e574805537ace146cc05e",
+    "runner_sha256": "05777c2f2b0791cb5157aef691206606dade8df7af3b17212285b7ae74632a66",
+    "credential_policy_sha256": "bcabf08a1ca92f28357c0e57a8bae9bfa910eb1d4b204d8195ee3b7a77106eed",
+    "scenario_sha256": "4c25526236a21fbe14fe3ddea2848fb41eb46cb765d0b655010daeec91b0a593",
+    "skill_source_hashes": {
+      "scripts/common.py": "f4b49bc8aa9836e6c13308ac179c3ca39624cd290582eedb49306f023cd457a4",
+      "scripts/compose_report.py": "5d625bee8c60adb9461f1385d2b4f3ed7836157322adfdabdcc1b5f623bd6c65",
+      "scripts/mcp_client.py": "47528bfa7612b927cb0ba9697b2f9a8045568423365a79c7e6a9e12fcbfbc5a7",
+      "scripts/render_report.py": "195ededda5d56aefc2379e72b152d6e07857d3669645e6319dd7e83c9419901a",
+      "scripts/validate_config.py": "0674e86478a9298a553a6c1be09aad1a3b13e46833f53c2b8f45a8ce0ce4fc50"
+    },
+    "upstream_source_hashes": {
+      "enterprise-risk-mcp-server": "4746f577771186ab453261234ba8cd230cae4398d4a2780776019aecf5b2cc6b"
+    },
+    "upstream_dependency_hashes": {
+      "enterprise-risk-mcp-server/server/mcp_server.py": "4746f577771186ab453261234ba8cd230cae4398d4a2780776019aecf5b2cc6b"
+    }
+  },
+  "source_changed_during_run": false,
+  "started_at": "2026-10-27T10:44:15+08:00",
+  "elapsed_seconds": 10.212,
+  "returncode": 0,
+  "exception_type": null,
+  "command": "python3 enterprise-risk-skill/scripts/compose_report.py --enterprise '华为技术有限公司' --page-size 5 --output enterprise-risk-skill/output/live-replaced-20261027/07-compact-risk/report.json --report-output enterprise-risk-skill/output/live-replaced-20261027/07-compact-risk/report.html",
+  "transport": "local MCP servers via loopback streamable-http",
+  "cache_used": false,
+  "call_count": 10,
+  "successful_data_calls": 4,
+  "empty_calls": 6,
+  "failed_calls": 0,
+  "checks": {
+    "issues": [],
+    "warnings": [],
+    "coverage_pct": 45,
+    "subject": {
+      "enterprise": "华为技术有限公司",
+      "matchKeyword": "华为技术有限公司",
+      "keywordType": "name",
+      "match_raw": "华为技术有限公司",
+      "resolved": true,
+      "resolve_reason": "用户提供企业全称"
+    },
+    "title": "华为技术有限公司 企业风险分析报告",
+    "data_mode": null,
+    "metrics": [
+      {
+        "label": "上游模型评分",
+        "value": "99",
+        "hint": "上游模型输出（满分 100），需与风险明细交叉核验"
+      },
+      {
+        "label": "上游模型等级",
+        "value": "低风险",
+        "hint": "上游模型输出，不代表报告综合定性"
+      },
+      {
+        "label": "开庭公告",
+        "value": "4401",
+        "hint": "开庭公告记录数"
+      },
+      {
+        "label": "立案公告",
+        "value": "1325",
+        "hint": "立案公告记录数"
+      },
+      {
+        "label": "法院公告",
+        "value": "6341",
+        "hint": "法院公告记录数"
+      },
+      {
+        "label": "裁判文书",
+        "value": "3373",
+        "hint": "裁判文书记录数"
+      },
+      {
+        "label": "被执行人",
+        "value": "5",
+        "hint": "被执行人记录数"
+      },
+      {
+        "label": "限制高消费",
+        "value": "0",
+        "hint": "限制高消费记录数"
+      },
+      {
+        "label": "失信被执行",
+        "value": "0",
+        "hint": "失信被执行人记录数"
+      },
+      {
+        "label": "分维度记录数合计（未去重）",
+        "value": "15445",
+        "hint": "诉讼画像各司法阶段合计（未跨阶段事件去重，不含抵押、处罚等其他产品），不代表独立案件数"
+      }
+    ],
+    "quality_report": {
+      "total_sections": 11,
+      "populated_sections": 5,
+      "empty_sections": 6,
+      "coverage_pct": 45
+    },
+    "unregistered_tools": [],
+    "checks": {
+      "json_html_markdown": true,
+      "explicit_live": true,
+      "tool_calls_recorded": 10,
+      "offline_scripts": true,
+      "independent_rerender": true,
+      "offline_browser": true
+    }
+  },
+  "status": "passed",
+  "source_hashes": {
+    "scripts/common.py": "f4b49bc8aa9836e6c13308ac179c3ca39624cd290582eedb49306f023cd457a4",
+    "scripts/compose_report.py": "5d625bee8c60adb9461f1385d2b4f3ed7836157322adfdabdcc1b5f623bd6c65",
+    "scripts/mcp_client.py": "47528bfa7612b927cb0ba9697b2f9a8045568423365a79c7e6a9e12fcbfbc5a7",
+    "scripts/render_report.py": "195ededda5d56aefc2379e72b152d6e07857d3669645e6319dd7e83c9419901a",
+    "scripts/validate_config.py": "0674e86478a9298a553a6c1be09aad1a3b13e46833f53c2b8f45a8ce0ce4fc50"
+  },
+  "technical_status": "passed",
+  "audited_at": "2026-10-27T11:12:58+08:00",
+  "evidence_binding": {
+    "report.json": "972fdbda6707a02e1b2a1a5602998694edfa46ac4252c0a2b81d5c6236bb125b",
+    "report.html": "6330f4f77c4f1427bae026ff7498368c19c8456eafab3fcd06cc70f8aa8a846e",
+    "report.md": "520e370464efb45a99dbd6338178e9002e42e08923d4cd755f6894d21607cef0",
+    "calls.json": "e10c91ddac669c1033d2ce5d6650c94c84e7bdb792782e92e2d23483afaa172c",
+    "result.json": "3a4cbce42c8c596e582338877e3f0d679d371d2e455460f9c5fedc114a726b13",
+    "source_manifest_sha256": "014e0c39ccd221d4b037bfafc75dc705b73521da54c003be18fa8ca62d4dab92"
+  },
+  "business_review": {
+    "id": "07-compact-risk",
+    "verdict": "acceptable",
+    "summary": "本轮正式真实产物已逐项复核；结论限于上游公开数据、本次分页样本及报告声明口径。",
+    "checks": [
+      {
+        "expectation": "每个分页事件章节不超过 5 条或按实际返回",
+        "status": "pass",
+        "evidence": "两个分页调用pageSize=5、row_count=5；core court_hearings/court_announcements各5行。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=华为技术有限公司，match_raw=华为技术有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=5,total=4401; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=5,total=6341; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=99; 上游模型等级=低风险; 开庭公告=4401; 立案公告=1325; 法院公告=6341; 裁判文书=3373; 被执行人=5; 限制高消费=0; 失信被执行=0; 分维度记录数合计（未去重）=15445]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=0, court_hearings=5, court_announcements=5, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+      },
+      {
+        "expectation": "总量与样本记录数量应明确区分",
+        "status": "pass",
+        "evidence": "section note分别写上游总数4401/6341、当前返回5条；指标使用上游总量，不把5条样本冒充总数。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=华为技术有限公司，match_raw=华为技术有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=5,total=4401; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=5,total=6341; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=99; 上游模型等级=低风险; 开庭公告=4401; 立案公告=1325; 法院公告=6341; 裁判文书=3373; 被执行人=5; 限制高消费=0; 失信被执行=0; 分维度记录数合计（未去重）=15445]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=0, court_hearings=5, court_announcements=5, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+      },
+      {
+        "expectation": "代表记录应能回溯至核心章节",
+        "status": "pass",
+        "evidence": "representative_records 5条逐条来自court_hearings，例如(2025)粤0309民初45884号、深圳龙华法院，字段可回溯。 本轮实际产物：technical_status=passed，successful_data_calls=4，subject.enterprise=华为技术有限公司，match_raw=华为技术有限公司，resolved=True；calls=[enterprise_risk_insight_score:data,rows=None,total=None; risk_insight_serious_violations:empty,rows=None,total=None; risk_insight_chattel_mortgage:empty,rows=None,total=None; risk_insight_court_hearings:data,rows=5,total=4401; risk_insight_litigation_risk_profile:data,rows=None,total=None; risk_insight_court_announcements:data,rows=5,total=6341; risk_insight_intellectual_property_pledge:empty,rows=None,total=None; risk_insight_penalties:empty,rows=None,total=None; risk_insight_business_anomalies:empty,rows=None,total=None; risk_insight_consumption_restrictions:empty,rows=None,total=None]；metrics=[上游模型评分=99; 上游模型等级=低风险; 开庭公告=4401; 立案公告=1325; 法院公告=6341; 裁判文书=3373; 被执行人=5; 限制高消费=0; 失信被执行=0; 分维度记录数合计（未去重）=15445]；sections=[score_overview=3, litigation_overview=7, litigation_dist=5, serious_violations=0, chattel_mortgage=0, court_hearings=5, court_announcements=5, ip_pledge=0, penalties=0, business_anomalies=0, consumption_restrictions=0]；quality_report={\"total_sections\":11,\"populated_sections\":5,\"empty_sections\":6,\"coverage_pct\":45}。"
+      }
+    ],
+    "issues": [],
+    "evidence_binding": {
+      "report.json": "972fdbda6707a02e1b2a1a5602998694edfa46ac4252c0a2b81d5c6236bb125b",
+      "report.html": "6330f4f77c4f1427bae026ff7498368c19c8456eafab3fcd06cc70f8aa8a846e",
+      "report.md": "520e370464efb45a99dbd6338178e9002e42e08923d4cd755f6894d21607cef0",
+      "calls.json": "e10c91ddac669c1033d2ce5d6650c94c84e7bdb792782e92e2d23483afaa172c",
+      "result.json": "3a4cbce42c8c596e582338877e3f0d679d371d2e455460f9c5fedc114a726b13",
+      "source_manifest_sha256": "014e0c39ccd221d4b037bfafc75dc705b73521da54c003be18fa8ca62d4dab92"
+    }
+  }
+}

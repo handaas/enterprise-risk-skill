@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "skill": "enterprise-risk-skill",
+  "case_id": "02-contract-risk",
+  "title": "重大合同相对方风控",
+  "invocation_id": "1793069028254753000",
+  "provenance": {
+    "integrator_id": "683e574805537ace146cc05e",
+    "runner_sha256": "05777c2f2b0791cb5157aef691206606dade8df7af3b17212285b7ae74632a66",
+    "credential_policy_sha256": "bcabf08a1ca92f28357c0e57a8bae9bfa910eb1d4b204d8195ee3b7a77106eed",
+    "scenario_sha256": "850f140a425a0e70c5a15a8acbdfee5316665b6b85a430568bfdf804fbdaaf0a",
+    "skill_source_hashes": {
+      "scripts/common.py": "f4b49bc8aa9836e6c13308ac179c3ca39624cd290582eedb49306f023cd457a4",
+      "scripts/compose_report.py": "5d625bee8c60adb9461f1385d2b4f3ed7836157322adfdabdcc1b5f623bd6c65",
+      "scripts/mcp_client.py": "47528bfa7612b927cb0ba9697b2f9a8045568423365a79c7e6a9e12fcbfbc5a7",
+      "scripts/render_report.py": "195ededda5d56aefc2379e72b152d6e07857d3669645e6319dd7e83c9419901a",
+      "scripts/validate_config.py": "0674e86478a9298a553a6c1be09aad1a3b13e46833f53c2b8f45a8ce0ce4fc50"
+    },
+    "upstream_source_hashes": {
+      "enterprise-risk-mcp-server": "4746f577771186ab453261234ba8cd230cae4398d4a2780776019aecf5b2cc6b"
+    },
+    "upstream_dependency_hashes": {
+      "enterprise-risk-mcp-server/server/mcp_server.py": "4746f577771186ab453261234ba8cd230cae4398d4a2780776019aecf5b2cc6b"
+    }
+  },
+  "source_changed_during_run": false,
+  "started_at": "2026-10-27T10:43:48+08:00",
+  "elapsed_seconds": 25.649,
+  "returncode": 0,
+  "exception_type": null,
+  "command": "python3 enterprise-risk-skill/scripts/compose_report.py --enterprise '中国建筑第八工程局有限公司' --page-size 10 --output enterprise-risk-skill/output/live-replaced-20261027/02-contract-risk/report.json --report-output enterprise-risk-skill/output/live-replaced-20261027/02-contract-risk/report.html",
+  "transport": "local MCP servers via loopback streamable-http",
+  "cache_used": false,
+  "call_count": 10,
+  "successful_data_calls": 6,
+  "empty_calls": 4,
+  "failed_calls": 0,
+  "checks": {
+    "issues": [],
+    "warnings": [],
+    "coverage_pct": 64,
+    "subject": {
+      "enterprise": "中国建筑第八工程局有限公司",
+      "matchKeyword": "中国建筑第八工程局有限公司",
+      "keywordType": "name",
+      "match_raw": "中国建筑第八工程局有限公司",
+      "resolved": true,
+      "resolve_reason": "用户提供企业全称"
+    },
+    "title": "中国建筑第八工程局有限公司 企业风险分析报告",
+    "data_mode": null,
+    "metrics": [
+      {
+        "label": "上游模型评分",
+        "value": "59",
+        "hint": "上游模型输出（满分 100），需与风险明细交叉核验"
+      },
+      {
+        "label": "上游模型等级",
+        "value": "高风险",
+        "hint": "上游模型输出，不代表报告综合定性"
+      },
+      {
+        "label": "开庭公告",
+        "value": "17512",
+        "hint": "开庭公告记录数"
+      },
+      {
+        "label": "立案公告",
+        "value": "165",
+        "hint": "立案公告记录数"
+      },
+      {
+        "label": "法院公告",
+        "value": "5739",
+        "hint": "法院公告记录数"
+      },
+      {
+        "label": "裁判文书",
+        "value": "7812",
+        "hint": "裁判文书记录数"
+      },
+      {
+        "label": "被执行人",
+        "value": "536",
+        "hint": "被执行人记录数"
+      },
+      {
+        "label": "限制高消费",
+        "value": "5",
+        "hint": "限制高消费记录数"
+      },
+      {
+        "label": "失信被执行",
+        "value": "6",
+        "hint": "失信被执行人记录数"
+      },
+      {
+        "label": "行政处罚",
+        "value": "3",
+        "hint": "行政处罚记录条数"
+      },
+      {
+        "label": "分维度记录数合计（未去重）",
+        "value": "31775",
+        "hint": "诉讼画像各司法阶段合计（未跨阶段事件去重，不含抵押、处罚等其他产品），不代表独立案件数"
+      },
+      {
+        "label": "当前返回行政处罚明细数",
+        "value": "3",
+        "hint": "当前响应 punishmentList/taxPenaltyList 的明细行数"
+      },
+      {
+        "label": "当前返回限高明细数",
+        "value": "5",
+        "hint": "当前页 resultList 的明细行数"
+      }
+    ],
+    "quality_report": {
+      "total_sections": 11,
+      "populated_sections": 7,
+      "empty_sections": 4,
+      "coverage_pct": 64
+    },
+    "unregistered_tools": [],
+    "checks": {
+      "json_html_markdown": true,
+      "explicit_live": true,
+      "tool_calls_recorded": 10,
+      "offline_scripts": true,
+      "independent_rerender": true,
+      "offline_browser": true
+    }
+  },
+  "status": "passed",
+  "source_hashes": {
+    "scripts/common.py": "f4b49bc8aa9836e6c13308ac179c3ca39624cd290582eedb49306f023cd457a4",
+    "scripts/compose_report.py": "5d625bee8c60adb9461f1385d2b4f3ed7836157322adfdabdcc1b5f623bd6c65",
+    "scripts/mcp_client.py": "47528bfa7612b927cb0ba9697b2f9a8045568423365a79c7e6a9e12fcbfbc5a7",
+    "scripts/render_report.py": "195ededda5d56aefc2379e72b152d6e07857d3669645e6319dd7e83c9419901a",
+    "scripts/validate_config.py": "0674e86478a9298a553a6c1be09aad1a3b13e46833f53c2b8f45a8ce0ce4fc50"
+  },
+  "technical_status": "passed",
+  "audited_at": "2026-10-27T11:12:58+08:00",
+  "evidence_binding": {
+    "report.json": "da302348298cca4b36a30733f4cb1fc9fc71de7d804a3d0565e3c7035b28f86d",
+    "report.html": "07e7b4a174dc861dc96afdf42b5c13be1a7cc91892bb4de7f73efa5e676ed04f",
+    "report.md": "3ee36b6f72bff452a06fb287d902d3c55f0eaf81c4b4628f932bfb656a01cf3c",
+    "calls.json": "74e91f53421c376e041c5cbd4b762553925583d23484b9350652ace1db7bd0d5",
+    "result.json": "7b598b148af44a2151211f4bb15b3f8d3098568779835762e0c65cc21810d023",
+    "source_manifest_sha256": "014e0c39ccd221d4b037bfafc75dc705b73521da54c003be18fa8ca62d4dab92"
+  }
+}

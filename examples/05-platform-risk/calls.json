@@ -1,0 +1,268 @@
+[
+  {
+    "tool": "enterprise_risk_insight_score",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "北京京东世纪贸易有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069052886683000",
+    "elapsed_seconds": 1.375,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "risk_level",
+      "risk_reason",
+      "risk_score"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [
+      {
+        "path": "risk_score",
+        "value": 100
+      }
+    ],
+    "response_sha256": "9da0e86852b583e5772c221911e07d05e6159fc4b33dc2f76371efa1faa458ad"
+  },
+  {
+    "tool": "risk_insight_serious_violations",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "北京京东世纪贸易有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069052886683000",
+    "elapsed_seconds": 1.02,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_chattel_mortgage",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "北京京东世纪贸易有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069052886683000",
+    "elapsed_seconds": 0.593,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_court_hearings",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "北京京东世纪贸易有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 10
+    },
+    "invocation_id": "1793069052886683000",
+    "elapsed_seconds": 1.199,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "resultList",
+      "total"
+    ],
+    "row_count": 10,
+    "reported_total": 2613,
+    "numeric_evidence": [
+      {
+        "path": "total",
+        "value": 2613
+      }
+    ],
+    "response_sha256": "b9b53e4a6e3cf73049ea65cb644b06e390c3c2e8e7832b56dfe510fd7111e5c2"
+  },
+  {
+    "tool": "risk_insight_litigation_risk_profile",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "北京京东世纪贸易有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069052886683000",
+    "elapsed_seconds": 2.981,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "caKaitingList",
+      "caKaitingTotal",
+      "caLianList",
+      "caLianTotal",
+      "caList",
+      "caTotal",
+      "edList",
+      "edTotal",
+      "enforcementList",
+      "enforcementTotal",
+      "jdList",
+      "jdTotal",
+      "limitedTotal"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [
+      {
+        "path": "caKaitingTotal",
+        "value": 2613
+      },
+      {
+        "path": "caLianTotal",
+        "value": 59
+      },
+      {
+        "path": "caTotal",
+        "value": 926
+      },
+      {
+        "path": "edTotal",
+        "value": 1
+      },
+      {
+        "path": "enforcementTotal",
+        "value": 20
+      },
+      {
+        "path": "jdTotal",
+        "value": 2291
+      },
+      {
+        "path": "limitedTotal",
+        "value": 0
+      }
+    ],
+    "response_sha256": "d8b081c28403a8823d0e71508d6db7a4a1b43055554b3d4c429f068644a71a49"
+  },
+  {
+    "tool": "risk_insight_court_announcements",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "北京京东世纪贸易有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 10
+    },
+    "invocation_id": "1793069052886683000",
+    "elapsed_seconds": 0.432,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "resultList",
+      "total"
+    ],
+    "row_count": 10,
+    "reported_total": 926,
+    "numeric_evidence": [
+      {
+        "path": "total",
+        "value": 926
+      }
+    ],
+    "response_sha256": "c4234c971550aad62a257a8642785082e58b1303cefbcdccf6ea2d2482841462"
+  },
+  {
+    "tool": "risk_insight_intellectual_property_pledge",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "北京京东世纪贸易有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069052886683000",
+    "elapsed_seconds": 0.483,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_penalties",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "北京京东世纪贸易有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069052886683000",
+    "elapsed_seconds": 3.101,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_business_anomalies",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "北京京东世纪贸易有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069052886683000",
+    "elapsed_seconds": 0.408,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_consumption_restrictions",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "北京京东世纪贸易有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 10
+    },
+    "invocation_id": "1793069052886683000",
+    "elapsed_seconds": 0.474,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  }
+]

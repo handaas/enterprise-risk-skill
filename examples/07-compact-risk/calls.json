@@ -1,0 +1,267 @@
+[
+  {
+    "tool": "enterprise_risk_insight_score",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "华为技术有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069055561773000",
+    "elapsed_seconds": 1.531,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "risk_level",
+      "risk_reason",
+      "risk_score"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [
+      {
+        "path": "risk_score",
+        "value": 99
+      }
+    ],
+    "response_sha256": "d43b6a9d9e9782b970da3ddb43c274f5359abdc5f1d5dd589b73b4713ebde1ed"
+  },
+  {
+    "tool": "risk_insight_serious_violations",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "华为技术有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069055561773000",
+    "elapsed_seconds": 2.98,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_chattel_mortgage",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "华为技术有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069055561773000",
+    "elapsed_seconds": 0.432,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_court_hearings",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "华为技术有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 5
+    },
+    "invocation_id": "1793069055561773000",
+    "elapsed_seconds": 0.484,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "resultList",
+      "total"
+    ],
+    "row_count": 5,
+    "reported_total": 4401,
+    "numeric_evidence": [
+      {
+        "path": "total",
+        "value": 4401
+      }
+    ],
+    "response_sha256": "43a8cf4e3a138c47d48f2e4bf7fb5f931d37ce7858e16bc5db7f4911b52a45b1"
+  },
+  {
+    "tool": "risk_insight_litigation_risk_profile",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "华为技术有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069055561773000",
+    "elapsed_seconds": 3.103,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "caKaitingList",
+      "caKaitingTotal",
+      "caLianList",
+      "caLianTotal",
+      "caList",
+      "caTotal",
+      "edTotal",
+      "enforcementList",
+      "enforcementTotal",
+      "jdList",
+      "jdTotal",
+      "limitedTotal"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [
+      {
+        "path": "caKaitingTotal",
+        "value": 4401
+      },
+      {
+        "path": "caLianTotal",
+        "value": 1325
+      },
+      {
+        "path": "caTotal",
+        "value": 6341
+      },
+      {
+        "path": "edTotal",
+        "value": 0
+      },
+      {
+        "path": "enforcementTotal",
+        "value": 5
+      },
+      {
+        "path": "jdTotal",
+        "value": 3373
+      },
+      {
+        "path": "limitedTotal",
+        "value": 0
+      }
+    ],
+    "response_sha256": "7ad011c516a3e2d2064d93a4631e308c490901063fbc851561a194476e880a49"
+  },
+  {
+    "tool": "risk_insight_court_announcements",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "华为技术有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 5
+    },
+    "invocation_id": "1793069055561773000",
+    "elapsed_seconds": 0.407,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "resultList",
+      "total"
+    ],
+    "row_count": 5,
+    "reported_total": 6341,
+    "numeric_evidence": [
+      {
+        "path": "total",
+        "value": 6341
+      }
+    ],
+    "response_sha256": "7745d0342bca9699e879f84ab21236e33d7d35862b7ff5be89062e7c97a8a11c"
+  },
+  {
+    "tool": "risk_insight_intellectual_property_pledge",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "华为技术有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069055561773000",
+    "elapsed_seconds": 0.467,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_penalties",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "华为技术有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069055561773000",
+    "elapsed_seconds": 0.237,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_business_anomalies",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "华为技术有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069055561773000",
+    "elapsed_seconds": 0.199,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_consumption_restrictions",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "华为技术有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 5
+    },
+    "invocation_id": "1793069055561773000",
+    "elapsed_seconds": 0.253,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  }
+]

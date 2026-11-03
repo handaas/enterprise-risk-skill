@@ -1,0 +1,40 @@
+{
+  "metric_overflows": [],
+  "document_title": "宁德时代新能源科技股份有限公司 企业风险分析报告",
+  "title_matches": true,
+  "charts": 2,
+  "rendered_charts": 2,
+  "zero_size_charts": 0,
+  "chart_details": [
+    {
+      "width": 346,
+      "height": 240,
+      "instance": true,
+      "renderer": true,
+      "graphics": 29
+    },
+    {
+      "width": 984,
+      "height": 300,
+      "instance": true,
+      "renderer": true,
+      "graphics": 35
+    }
+  ],
+  "page_width": 1905,
+  "viewport_width": 1920,
+  "empty_headers": 0,
+  "script_errors": [],
+  "external_resources": 0,
+  "external_asset_references": 0,
+  "ok": true,
+  "report_html_sha256": "3a387e73be7b59ad5f6f8f1e8b337d8eeb8a51063d16fc62adf58724218f51d1",
+  "report_json_sha256": "0c9f6ce9b3cbac439a6a9be879888f1989cdbd7b7868bd8b5361b8ec71af5e4a",
+  "screenshot": "browser.png",
+  "skill": "enterprise-risk-skill",
+  "id": "01-supplier-risk",
+  "browser": "Ego Lite",
+  "space_id": 4,
+  "offline": true,
+  "checked_at": "2026-10-27T03:02:47.498Z"
+}

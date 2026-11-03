@@ -1,0 +1,273 @@
+[
+  {
+    "tool": "enterprise_risk_insight_score",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "宁德时代新能源科技股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069027695305000",
+    "elapsed_seconds": 0.656,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "risk_level",
+      "risk_reason",
+      "risk_score"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [
+      {
+        "path": "risk_score",
+        "value": 100
+      }
+    ],
+    "response_sha256": "28d083848c160c21a977d6c585b21235c02302d2e09c5e1f82e546e0d11b85c6"
+  },
+  {
+    "tool": "risk_insight_serious_violations",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "宁德时代新能源科技股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069027695305000",
+    "elapsed_seconds": 0.247,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_chattel_mortgage",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "宁德时代新能源科技股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069027695305000",
+    "elapsed_seconds": 1.292,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "mortgageCount",
+      "mortgageInfoList"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [
+      {
+        "path": "mortgageCount",
+        "value": 11
+      }
+    ],
+    "response_sha256": "41bd5eefa341d228d0d06cabb326f1ff46f03cfd0243379330d270fd56469276"
+  },
+  {
+    "tool": "risk_insight_court_hearings",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "宁德时代新能源科技股份有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 10
+    },
+    "invocation_id": "1793069027695305000",
+    "elapsed_seconds": 0.409,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "resultList",
+      "total"
+    ],
+    "row_count": 10,
+    "reported_total": 229,
+    "numeric_evidence": [
+      {
+        "path": "total",
+        "value": 229
+      }
+    ],
+    "response_sha256": "0b961fd24acad5c3e8790cdf953060ed9e3d07334e2d8e9240ea2c41dea6979d"
+  },
+  {
+    "tool": "risk_insight_litigation_risk_profile",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "宁德时代新能源科技股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069027695305000",
+    "elapsed_seconds": 0.606,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "caKaitingList",
+      "caKaitingTotal",
+      "caLianList",
+      "caLianTotal",
+      "caList",
+      "caTotal",
+      "edTotal",
+      "enforcementList",
+      "enforcementTotal",
+      "jdList",
+      "jdTotal",
+      "limitedTotal"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [
+      {
+        "path": "caKaitingTotal",
+        "value": 229
+      },
+      {
+        "path": "caLianTotal",
+        "value": 1
+      },
+      {
+        "path": "caTotal",
+        "value": 137
+      },
+      {
+        "path": "edTotal",
+        "value": 0
+      },
+      {
+        "path": "enforcementTotal",
+        "value": 2
+      },
+      {
+        "path": "jdTotal",
+        "value": 97
+      },
+      {
+        "path": "limitedTotal",
+        "value": 0
+      }
+    ],
+    "response_sha256": "07fc95d3cdb69b7d990fa389627165c7c0597eeae898137e4e6ed0155997b371"
+  },
+  {
+    "tool": "risk_insight_court_announcements",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "宁德时代新能源科技股份有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 10
+    },
+    "invocation_id": "1793069027695305000",
+    "elapsed_seconds": 1.098,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "resultList",
+      "total"
+    ],
+    "row_count": 10,
+    "reported_total": 137,
+    "numeric_evidence": [
+      {
+        "path": "total",
+        "value": 137
+      }
+    ],
+    "response_sha256": "94488414618adb5e24eeb73e2bb95b372cdb8900bebf2e2dd4c4e1f5d340b841"
+  },
+  {
+    "tool": "risk_insight_intellectual_property_pledge",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "宁德时代新能源科技股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069027695305000",
+    "elapsed_seconds": 13.358,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_penalties",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "宁德时代新能源科技股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069027695305000",
+    "elapsed_seconds": 1.046,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_business_anomalies",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "宁德时代新能源科技股份有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069027695305000",
+    "elapsed_seconds": 0.955,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_consumption_restrictions",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "宁德时代新能源科技股份有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 10
+    },
+    "invocation_id": "1793069027695305000",
+    "elapsed_seconds": 5.203,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  }
+]

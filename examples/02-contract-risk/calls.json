@@ -1,0 +1,281 @@
+[
+  {
+    "tool": "enterprise_risk_insight_score",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "中国建筑第八工程局有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069028254753000",
+    "elapsed_seconds": 1.269,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "risk_level",
+      "risk_reason",
+      "risk_score"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [
+      {
+        "path": "risk_score",
+        "value": 59
+      }
+    ],
+    "response_sha256": "522d03dde4b6a98589cf57ac274b020b762a60f4552d1acc5b289a4bbda95d3c"
+  },
+  {
+    "tool": "risk_insight_serious_violations",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "中国建筑第八工程局有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069028254753000",
+    "elapsed_seconds": 0.597,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_chattel_mortgage",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "中国建筑第八工程局有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069028254753000",
+    "elapsed_seconds": 0.415,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_court_hearings",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "中国建筑第八工程局有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 10
+    },
+    "invocation_id": "1793069028254753000",
+    "elapsed_seconds": 0.927,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "resultList",
+      "total"
+    ],
+    "row_count": 10,
+    "reported_total": 17512,
+    "numeric_evidence": [
+      {
+        "path": "total",
+        "value": 17512
+      }
+    ],
+    "response_sha256": "b1a0548286d5b356051d9b0f545bab0a94aeb5a830bc01ac137b67131073a2c8"
+  },
+  {
+    "tool": "risk_insight_litigation_risk_profile",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "中国建筑第八工程局有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069028254753000",
+    "elapsed_seconds": 13.686,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "caKaitingList",
+      "caKaitingTotal",
+      "caLianList",
+      "caLianTotal",
+      "caList",
+      "caTotal",
+      "edList",
+      "edTotal",
+      "enforcementList",
+      "enforcementTotal",
+      "jdList",
+      "jdTotal",
+      "limitedList",
+      "limitedTotal"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [
+      {
+        "path": "caKaitingTotal",
+        "value": 17512
+      },
+      {
+        "path": "caLianTotal",
+        "value": 165
+      },
+      {
+        "path": "caTotal",
+        "value": 5739
+      },
+      {
+        "path": "edTotal",
+        "value": 6
+      },
+      {
+        "path": "enforcementTotal",
+        "value": 536
+      },
+      {
+        "path": "jdTotal",
+        "value": 7812
+      },
+      {
+        "path": "limitedTotal",
+        "value": 5
+      }
+    ],
+    "response_sha256": "2fba703bb9c9cfaf8efe9a71fb7f4bd9f038ac6e9268bdcb1adbdb81c81fa2d2"
+  },
+  {
+    "tool": "risk_insight_court_announcements",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "中国建筑第八工程局有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 10
+    },
+    "invocation_id": "1793069028254753000",
+    "elapsed_seconds": 0.703,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "resultList",
+      "total"
+    ],
+    "row_count": 10,
+    "reported_total": 5739,
+    "numeric_evidence": [
+      {
+        "path": "total",
+        "value": 5739
+      }
+    ],
+    "response_sha256": "7eaf231f9c2c73e7698c145573c7b78e5d8e98178c5b2e6a2b23cd1baf91687a"
+  },
+  {
+    "tool": "risk_insight_intellectual_property_pledge",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "中国建筑第八工程局有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069028254753000",
+    "elapsed_seconds": 0.933,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_penalties",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "中国建筑第八工程局有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069028254753000",
+    "elapsed_seconds": 2.336,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "punishmentCount",
+      "punishmentList"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [
+      {
+        "path": "punishmentCount",
+        "value": 3
+      }
+    ],
+    "response_sha256": "21f3e5218811f6645346c0a33b3faa5fd684f7a19052b52c0b8e814c7f0bc887"
+  },
+  {
+    "tool": "risk_insight_business_anomalies",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "中国建筑第八工程局有限公司",
+      "keywordType": "name"
+    },
+    "invocation_id": "1793069028254753000",
+    "elapsed_seconds": 3.97,
+    "status": "empty",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "text"
+    ],
+    "row_count": null,
+    "reported_total": null,
+    "numeric_evidence": [],
+    "response_sha256": "b2da0c4c26e517e5a1eae0af2a20ca47c52ef51906cf1c3dfa2fe10a67cc714c"
+  },
+  {
+    "tool": "risk_insight_consumption_restrictions",
+    "domain": null,
+    "arguments": {
+      "matchKeyword": "中国建筑第八工程局有限公司",
+      "keywordType": "name",
+      "pageIndex": 1,
+      "pageSize": 10
+    },
+    "invocation_id": "1793069028254753000",
+    "elapsed_seconds": 0.697,
+    "status": "data",
+    "error_category": null,
+    "result_type": "dict",
+    "top_level_fields": [
+      "resultList",
+      "total"
+    ],
+    "row_count": 5,
+    "reported_total": 5,
+    "numeric_evidence": [
+      {
+        "path": "total",
+        "value": 5
+      }
+    ],
+    "response_sha256": "3626d4ce2dc3c8a97e9dae77cf7c37f9f23fb652059b54dee3586b4e297399e2"
+  }
+]
