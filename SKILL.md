@@ -73,6 +73,34 @@ description: Use for generating a professional enterprise risk analysis report (
 4. **渲染三件套**：`compose_report.py --enterprise ... --output ... --report-output ...` 直接产出 JSON + HTML + Markdown；或 `render_report.py --input ... --output ...` 重渲染。
 5. **返回路径**：返回 JSON、HTML、Markdown 文件路径，以及企业全称映射与数据口径。
 
+- **渲染前置检查**：执行会产出含图表 HTML / PDF 的报告命令前，先验证 `node --version` 与本 skill 自带 `assets/vendor/echarts.min.js` 存在；内嵌静态 SVG 的生成需要 Node.js（推荐当前 LTS，无需 npm 包），缺失时报告生成明确报错。查看已生成的 HTML 与 Markdown 输出不需要 Node。
+
+## AI 内容审校（正常生成已内置，离线复核可重放）
+
+正常生成（`build_payload` / CLI 非 `--dry-run`）在组装阶段已自动执行 `apply_content_review`；`--dry-run` 与正常生成共用同一条路径且只执行一次。离线入口仅用于复核已有报告，重复调用保留此前 `content_review.corrections`。以下语义核对仍须由当前 AI 逐项完成，并把“原值 → 规范值 → 证据位置”写入审校记录。
+
+评分与记录数不是同一层证据；以下核对必须由当前 AI 完成，并在审校记录中保留原值、规范值与证据位置。
+
+1. **评分与明细分层**：`风险评分/等级` 是上游模型输出，不能替代司法、处罚、执行明细；评分低但记录非零时，必须同时写出“司法记录非零，仍需核验”，不得把“低风险”写成总体结论。
+2. **评级说明不是成因**：`risk_reason` 中的“世界500强”“存在负债风险”等是上游说明原文，不是经核验的风险成因；写作时用“上游原文”，不据此推断模型权重。
+3. **阶段计数不是案件数**：开庭公告/立案公告/法院公告/裁判文书/被执行等阶段可能对同一事件重复计数；阶段合计标注“未去重、不代表独立案件数”，CR2 只描述记录数分布。
+4. **字段缺失**：案号、开庭日期、当事人角色、裁判结果、履行状态缺失时保留 `-`，不补“无风险”或“已履行”；日期不明不当作当前有效。
+5. **维度覆盖**：`10 大风险维度中有 N 个存在记录` 只表示返回数据覆盖，不表示其余维度不存在风险；未返回维度写“未覆盖/待核验”。
+6. **主体确认**：未唯一确认主体时不调用主体风险数据、不生成风险评价。
+
+离线修订已有报告（不调用 MCP，不覆盖 `examples/`）：
+
+```python
+import json
+from compose_report import apply_content_review
+
+report = json.load(open("examples/01-supplier-risk/report.json", encoding="utf-8"))
+revised = apply_content_review(report)
+json.dump(revised, open("output/content-quality-review/01-supplier-risk/report.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+```
+
+`apply_content_review` 将复合列名 `名称/类型/状态/年份` 规范为 `阶段`，将“风险评级依据”改为“上游评级说明”，并刷新摘要/洞察；不改评分、等级、记录数或案件事实。
+
 ## 脚本速查
 
 ```bash

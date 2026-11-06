@@ -80,3 +80,16 @@ python scripts/render_report.py --input output/risk.json --output output/risk.md
 ```
 
 返回：JSON 路径、HTML 路径、Markdown 路径，以及企业全称映射与数据口径摘要。
+
+## AI 内容审校清单（风险）
+
+| 检查项 | 原值示例 | 允许的规范动作 | 证据位置 |
+| --- | --- | --- | --- |
+| 评分与明细 | 评分 100 / 低风险，司法记录 466 | 保留评分，同时写“记录非零，需交叉核验” | `score_overview`、`litigation_overview` |
+| 评级说明 | `世界500强` | 标为“上游原文/上游评级说明”，不写成风险成因 | `risk_reason` |
+| 阶段列名 | `名称/类型/状态/年份` | 规范为 `阶段`，不改值 | `litigation_dist[]` |
+| 阶段合计 | 466 | 标“未去重、不等于独立案件数” | `litigation_dist` 求和 |
+| 记录缺失 | `案号 -`、`开庭日期 -` | 保留 `-`；不补“无风险/已履行” | 各类明细表 |
+| 维度覆盖 | `10 个维度中 3 个有记录` | 只描述覆盖，不推断其余维度无风险 | `sections` 填充数 |
+
+离线修订入口：`compose_report.py::apply_content_review(report)`。正常生成（`build_payload` / CLI 非 `--dry-run`）已在组装阶段自动执行同一审校；离线入口只读报告已有字段，不查 MCP；修正项写入 `data_source.content_review.corrections`，重复处理保留既有修正记录。司法阶段分布保持“未去重、不等于独立案件数、未提供当事人角色/裁判结果/履行状态”的样本边界说明。

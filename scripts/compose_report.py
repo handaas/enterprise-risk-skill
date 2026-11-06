@@ -18,6 +18,7 @@ This file never prints secrets; MCP credentials live in the server's own .env.
 from __future__ import annotations
 
 import argparse
+import copy
 import datetime as dt
 import json
 import pathlib
@@ -242,7 +243,9 @@ def _concentration(rows: List[Mapping[str, Any]], top_n: int = 3) -> Dict[str, A
     Rows use the unified {名称/类型/状态/年份, 数量} shape produced by
     section builders so it is interchangeable across skills.
     """
-    name_key = "名称/类型/状态/年份"
+    name_key = "阶段"
+    if rows and not any(name_key in r for r in rows if isinstance(r, Mapping)):
+        name_key = "名称/类型/状态/年份"
     items = []
     for r in rows:
         try:
@@ -578,12 +581,13 @@ def build_core_analysis(
 
     # Score KV (gauge reads 风险评分 / 风险等级 from this dict).
     score_kv = _kv_from(s, _SCORE_FIELDS)
-    # 风险评级依据: risk_reason is a list[str] e.g. ["世界500强"].
+    # 上游评级说明: risk_reason is a list[str] e.g. ["世界500强"].
+    # It is the upstream model's explanation text, not a verified causal factor.
     reason = s.get("risk_reason") or s.get("riskReason")
     if isinstance(reason, list) and reason:
-        score_kv["风险评级依据"] = "、".join(str(x) for x in reason if x)
+        score_kv["上游评级说明"] = "、".join(str(x) for x in reason if x)
     elif reason:
-        score_kv["风险评级依据"] = _text(reason)
+        score_kv["上游评级说明"] = _text(reason)
 
     # Litigation profile KV: real camelCase totals.
     litigation_kv = _kv_from(lit, _LITIGATION_TOTAL_FIELDS)
@@ -593,7 +597,7 @@ def build_core_analysis(
     for key, label in _LITIGATION_DIST:
         n = _int(lit.get(key))
         if n is not None and n > 0:
-            litigation_dist.append({"名称/类型/状态/年份": label, "数量": str(n)})
+            litigation_dist.append({"阶段": label, "数量": str(n)})
 
     serious_rows = _table_from(serious, _SERIOUS_FIELDS)
     mortgage_rows: List[Dict[str, Any]] = []
@@ -623,7 +627,7 @@ def build_core_analysis(
     sections = [
         {"key": "score_overview", "title": "上游模型风险评分", "kind": "gauge", "note": "上游模型评分与等级（满分 100），不替代司法及合规明细核验", "chart": {"value_key": "风险评分", "level_key": "风险等级", "max": 100}},
         {"key": "litigation_overview", "title": "诉讼风险画像", "kind": "kv", "note": "按上游字段呈现开庭/立案/裁判/执行/限高/失信记录数；未提供当事人角色、裁判结果或履行状态"},
-        {"key": "litigation_dist", "title": "诉讼阶段分布", "kind": "bar", "note": "按诉讼阶段统计记录数；未提供当事人角色、裁判结果或履行状态", "chart": {"name": "名称/类型/状态/年份", "value": "数量", "orient": "v"}, "columns": [("阶段", "名称/类型/状态/年份"), ("数量", "数量")]},
+        {"key": "litigation_dist", "title": "诉讼阶段分布", "kind": "bar", "note": "按诉讼阶段统计记录数；同一事件可能在不同阶段各计一次，不能相加为独立案件数", "chart": {"name": "阶段", "value": "数量", "orient": "v"}, "columns": [("阶段", "阶段"), ("数量", "数量")]},
         {"key": "court_hearings", "title": "开庭公告", "kind": "table", "note": _section_note("开庭公告", hearings, hearing_rows), "columns": [("案号", "案号"), ("公告类型", "公告类型"), ("法院", "法院"), ("开庭日期", "开庭日期"), ("案由", "案由"), ("公告日期", "公告日期")]},
         {"key": "court_announcements", "title": "法院公告", "kind": "table", "note": _section_note("法院公告", announce, announce_rows), "columns": [("案号", "案号"), ("公告类型", "公告类型"), ("法院", "法院"), ("案由", "案由"), ("开庭日期", "开庭日期"), ("刊登日期", "刊登日期")]},
         {"key": "serious_violations", "title": "严重违法", "kind": "table", "note": _section_note("严重违法", serious, serious_rows), "columns": [("类别", "类别"), ("列入原因", "列入原因"), ("决定机关", "决定机关"), ("列入日期", "列入日期"), ("移除日期", "移除日期")]},
@@ -690,14 +694,14 @@ def build_insights(subject: Mapping[str, Any], core: Mapping[str, Any], metrics:
             "evidence": f"{evidence}。{focus_hint}",
             "interpretation": "评分和等级是上游模型结果；应与司法、处罚等明细交叉核验，不应单独替代总体风险判断。",
         })
-    # 风险评级依据 (risk_reason list) insight
+    # 上游评级说明 (risk_reason list) insight
     score_kv = core.get("score_overview") or {}
-    reason = score_kv.get("风险评级依据")
+    reason = score_kv.get("上游评级说明") or score_kv.get("风险评级依据")
     if reason:
         insights.append({
-            "feature": "风险评级依据",
-            "evidence": f"评级依据：{reason}。",
-            "interpretation": "该内容为上游模型返回的评级依据字段；报告未获得模型权重或贡献度，不对各项因素如何影响评分作进一步推断。",
+            "feature": "上游评级说明",
+            "evidence": f"上游原文：{reason}。",
+            "interpretation": "该内容为上游模型返回的说明字段，不是经核验的风险成因，也不代表本报告对风险来源的认定；报告未获得模型权重或贡献度。",
         })
     # 诉讼阶段集中度 from litigation_dist bar chart rows.
     litigation_dist = core.get("litigation_dist") or []
@@ -902,7 +906,7 @@ def _assemble(subject: Mapping[str, Any], core: Mapping[str, Any], metrics: Sequ
         import sys
         print("⚠️ 质量门禁警告: 所有核心分析维度均无数据", file=sys.stderr)
     title = f"{subject.get('enterprise') or '目标企业'} 企业风险分析报告"
-    return {
+    report = {
         "report_type": REPORT_TYPE,
         "title": title,
         "banner": REPORT_BANNER,
@@ -934,6 +938,7 @@ def _assemble(subject: Mapping[str, Any], core: Mapping[str, Any], metrics: Sequ
             "quality_report": quality_report,
         },
     }
+    return apply_content_review(report)
 
 
 @paid_call_scope
@@ -972,9 +977,121 @@ def build_payload(raw: str, keyword_type: str, page_size: int, max_pages: Option
     return _attach_call_status(report, {"风险评分": score, "严重违法": serious, "动产抵押": mortgage, "开庭公告": hearings, "诉讼画像": litigation, "法院公告": announce, "知识产权出质": ip_pledge, "行政处罚": penalties, "经营异常": anomalies, "限制高消费": restrictions})
 
 
-# --------------------------------------------------------------------------- #
-# CLI
-# --------------------------------------------------------------------------- #
+def _refresh_quality_report(report: Dict[str, Any]) -> Dict[str, Any]:
+    """Refresh section-fill metrics after offline review changed sections.
+
+    ``0`` is a populated value; None/""/[]/{} and documented empty sentinels are
+    empty. coverage_pct is section fill only, never an accuracy claim.
+    """
+    core = report.get("core_analysis") or {}
+    sections = core.get("sections")
+    if isinstance(sections, list) and sections:
+        total = len(sections)
+        populated = sum(1 for s in sections if isinstance(s, dict) and _has_evidence(core.get(s.get("key"))))
+    else:
+        keys = [k for k in core if k != "sections"]
+        total = max(1, len(keys))
+        populated = sum(1 for k in keys if _has_evidence(core.get(k)))
+    source = report.setdefault("data_source", {})
+    source["quality_report"] = {
+        "total_sections": total,
+        "populated_sections": populated,
+        "empty_sections": total - populated,
+        "coverage_pct": round(populated / max(1, total) * 100),
+        "metric": "section_fill_rate",
+        "note": "章节填充率，仅表示有返回内容的 section 占比，不是内容准确率",
+    }
+    return report
+
+
+def _merge_review_records(previous: Any, current: Sequence[Mapping[str, Any]]) -> List[Dict[str, Any]]:
+    """Keep earlier review records when the same report is processed again."""
+    merged: List[Dict[str, Any]] = []
+    seen = set()
+    for item in list(previous or []) + list(current or []):
+        if not isinstance(item, Mapping):
+            continue
+        row = dict(item)
+        key = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
+        if key in seen:
+            continue
+        seen.add(key)
+        merged.append(row)
+    return merged
+
+
+def apply_content_review(report: Mapping[str, Any], source_evidence: Optional[Any] = None) -> Dict[str, Any]:
+    """Rebuild risk narrative from fields already present in a report.
+
+    Pure/offline: no MCP call and no new facts. The only semantic relabeling is
+    evidence-backed: an upstream composite key named
+    "名称/类型/状态/年份" is renamed to "阶段" (the rows contain stage labels),
+    and "风险评级依据" becomes "上游评级说明" because the upstream reason text
+    (e.g. "世界500强") is not a verified cause of the score.
+    """
+    out = copy.deepcopy(dict(report))
+    corrections: List[Dict[str, Any]] = []
+    subject = out.get("subject") or {}
+    core = out.get("core_analysis") or {}
+    source = out.get("data_source") or {}
+    previous_review = source.get("content_review") or {}
+
+    rows = core.get("litigation_dist") or []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        if "名称/类型/状态/年份" in row:
+            row["阶段"] = row.pop("名称/类型/状态/年份")
+            corrections.append({
+                "field": "core_analysis.litigation_dist[].名称/类型/状态/年份",
+                "before": "名称/类型/状态/年份",
+                "after": "阶段",
+                "reason": "该列实际只承载诉讼阶段名称（开庭公告/立案公告等），复合列名会误导为多维字段",
+            })
+    for section in core.get("sections") or []:
+        if not isinstance(section, dict) or section.get("key") != "litigation_dist":
+            continue
+        section["chart"] = {"name": "阶段", "value": "数量", "orient": "v"}
+        section["columns"] = [("阶段", "阶段"), ("数量", "数量")]
+        note = "按诉讼阶段统计记录数；同一事件可能在不同阶段各计一次，不能相加为独立案件数"
+        if "未提供当事人角色、裁判结果或履行状态" not in note:
+            note += "；未提供当事人角色、裁判结果或履行状态"
+        section["note"] = note
+
+    score = core.get("score_overview") or {}
+    if isinstance(score, dict) and "风险评级依据" in score:
+        before = score.pop("风险评级依据")
+        score["上游评级说明"] = before
+        corrections.append({
+            "field": "core_analysis.score_overview.风险评级依据",
+            "before": "风险评级依据",
+            "after": "上游评级说明",
+            "reason": "该字段是上游模型说明原文，不是经核验的风险成因",
+        })
+
+    insights = build_insights(subject, core, out.get("metrics") or [])
+    out["insights"] = insights
+    out["executive_summary"] = [item["interpretation"] for item in insights][:5] or [build_abstract(subject, core, out.get("metrics") or [])[:120]]
+    abstract = build_abstract(subject, core, out.get("metrics") or [])
+    out["abstract"] = abstract
+    out["summary"] = abstract
+    source = out.get("data_source") or {}
+    source["content_review"] = {
+        "mode": "offline_report_fields_only",
+        "source_evidence_supplied": bool(source_evidence),
+        "reviewed_at": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
+        "corrections": _merge_review_records(previous_review.get("corrections"), corrections),
+        "not_changed": [
+            "未重新查询 MCP；未新增案件、处罚、执行或金额事实",
+            "上游评分/等级原值保留，不按分数区间重分类",
+            "缺失当事人角色、裁判结果、履行状态仍不推断",
+        ],
+    }
+    out["data_source"] = source
+    return _refresh_quality_report(out)
+
+
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Compose an enterprise-risk analysis report via the risk MCP.")
